@@ -1,0 +1,23 @@
+SCSS: 
+Todo indentado, ordenado alfabeticamente
+las clases se nombraran con _ entre palabras, ejemplo: .block_container
+se usara la palabra container para cosas que contienen elementos adentro, y si contiene mas adentro se usara wrapper
+
+
+
+COMPONENTES: 
+todos los componentes deben usar PascalCase. (esto es obligatorio de React realmente para que no de problemas) (y las carpetas representando los componentes)
+media queries: mismos valores definidos en _variables.scss (en carpeta styles)
+si usan una imagen fija o varias imagenes pero fijas para ese componente (entiendase que no tendria sentido alguno usarlas afuera del componente),
+la imagen va en la misma carpeta que en el componente, pero si usan imagenes de forma dinamica, las imagenes que pueda usar deben ir en la carpeta public
+
+CURSOR DEFAULT:
+a todos los componentes por defecto
+
+IMAGENES:
+en minuscula todo, separado por guiones
+
+PRODUCTO MINIMO VIABLE:
+items, criaturas, monturas
+
+

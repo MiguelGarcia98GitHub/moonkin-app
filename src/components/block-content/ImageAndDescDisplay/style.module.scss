@@ -1,0 +1,30 @@
+.container {
+	backdrop-filter: blur(1px);
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	border-radius: 0.5vw;
+	display: grid;
+	grid-template-columns: 1fr 0.5fr;
+	height: 240px;
+	padding: 0.75rem;
+	width: 600px;
+
+	.img_wrapper {
+		margin: 1rem;
+
+		.img {
+			border-radius: 0.2vw;
+			filter: brightness(1.5);
+			height: 200px;
+			width: 400px;
+		}
+	}
+
+	.text_wrapper {
+		margin: 1rem;
+
+		.text {
+			font-size: 1.6rem;
+		}
+	}
+}

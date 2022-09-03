@@ -1,0 +1,10 @@
+@use "./styles/reset.scss";
+@use "./styles/global.scss";
+
+* {
+	cursor: default;
+}
+
+body {
+	margin: 4rem 30rem;
+}

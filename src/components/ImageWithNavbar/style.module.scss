@@ -1,0 +1,41 @@
+.container {
+	position: relative;
+	text-align: center;
+
+	.video {
+		filter: brightness(0.5);
+		min-width: 40rem;
+		width: 100%;
+	}
+
+	.navbar_left {
+		left: 5rem;
+		position: absolute;
+		top: 3rem;
+	}
+
+	.navbar_right {
+		position: absolute;
+		right: 5rem;
+		top: 3rem;
+	}
+
+	.main_container {
+		border: 1px solid red;
+		bottom: 5rem;
+		left: 3rem;
+		max-height: 30rem;
+		max-width: 500px;
+		position: absolute;
+		text-align: left;
+		top: 40rem;
+
+		.main_title_container {
+			font-size: 3rem;
+		}
+
+		.main_text_container {
+			margin-top: 1rem;
+		}
+	}
+}

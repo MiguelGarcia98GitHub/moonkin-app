@@ -1,0 +1,20 @@
+.footer {
+	align-items: center;
+	background: url("./footer-green-background.jpg") center center no-repeat;
+	box-shadow: 0 2px 6px #035336, 0 -2px 6px #035336;
+	display: flex;
+	height: 10rem;
+	justify-content: center;
+	text-shadow: 0 2px 4px #000;
+	width: 100%;
+
+	.text_container {
+		padding: 2rem 4rem;
+
+		.text {
+			font-size: 3rem;
+			font-style: italic;
+			font-weight: 700;
+		}
+	}
+}

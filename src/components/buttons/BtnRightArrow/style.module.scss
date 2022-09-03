@@ -1,0 +1,12 @@
+.btn {
+	background: url("./btn-right-arrow.png") 8px center no-repeat transparent;
+	border: 1px solid white;
+	cursor: pointer;
+	height: 250px;
+	transition: background-position 0.2s;
+	width: 80px;
+
+	&:hover {
+		background-position: 0px center;
+	}
+}

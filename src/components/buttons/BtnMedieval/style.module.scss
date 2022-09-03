@@ -1,0 +1,22 @@
+.btn {
+	align-items: center;
+	background: transparent url("./btn-medieval.png") center center no-repeat;
+	background-size: 100% auto;
+	border: 1px transparent;
+	cursor: pointer;
+	display: flex;
+	font-size: 1.6rem;
+	font-weight: bold;
+	font-weight: 700;
+	height: 111px;
+	justify-content: center;
+	transition: transform 0.8s;
+	width: 200px;
+
+	&:hover {
+		background: transparent url("./btn-medieval-hover.png") center center
+			no-repeat;
+		background-size: 100% auto;
+		transform: scale(1.1);
+	}
+}

@@ -1,0 +1,16 @@
+.container {
+	align-items: center;
+	border: none;
+	color: white;
+	cursor: pointer;
+	display: flex;
+	height: 100px;
+	justify-content: center;
+	margin-top: 5rem;
+	width: 60%;
+
+	.text {
+		cursor: pointer;
+		font-size: 3rem;
+	}
+}

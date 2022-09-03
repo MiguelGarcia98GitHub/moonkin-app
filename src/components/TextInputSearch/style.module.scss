@@ -1,0 +1,16 @@
+.container {
+	align-items: center;
+	background-color: red;
+	display: flex;
+	height: 10vh;
+	justify-content: center;
+	min-width: 250px;
+	width: 100%;
+
+	.wrapper {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+}
