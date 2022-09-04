@@ -1,20 +1,21 @@
 .container {
-	align-items: center;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+
 	min-height: 100vh;
 	position: relative;
 
 	.list_container {
 		background-color: blue;
-		min-width: 50vh;
+
 		width: 100%;
 	}
 
 	.text_input_box_wrapper {
 		background-color: green;
 		padding: 2rem;
+		position: absolute;
+		top: 0;
 		width: 100%;
 	}
 
