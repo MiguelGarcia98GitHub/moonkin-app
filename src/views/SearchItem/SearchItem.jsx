@@ -35,7 +35,7 @@ export const SearchItem = () => {
 					/>
 				</div>
 			</div>
-			{data && listItems}
+			<div className={css.list_container}>{data && listItems}</div>
 			<ThemeFooter backgroundColor={"green"} icon={"icon-1.png"} />
 		</div>
 	);
