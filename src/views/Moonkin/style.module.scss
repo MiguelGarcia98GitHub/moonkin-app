@@ -1,4 +1,9 @@
 .container {
+	min-height: 100vh;
+	position: relative;
+}
+
+.wrapper {
 	align-items: center;
 	display: flex;
 	flex-direction: column;

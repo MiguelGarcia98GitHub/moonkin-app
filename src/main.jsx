@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.scss";
 import Home from "./views/Home/Home";
 import { Moonkin } from "./views/Moonkin/Moonkin";
+import { SearchItem } from "./views/SearchItem/SearchItem";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
@@ -11,7 +12,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 			<Routes>
 				<Route exact path="/" element={<Home />} />
 				<Route exact path="/moonkin" element={<Moonkin />} />
-				<Route exact path="/search-item" element={<div>/s item</div>} />
+				<Route exact path="/search-item" element={<SearchItem />} />
 				<Route exact path="/search-creature" element={<div>/s creature</div>} />
 				<Route exact path="/search-mount" element={<div>/s mount</div>} />
 			</Routes>

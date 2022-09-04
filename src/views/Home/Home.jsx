@@ -1,8 +1,8 @@
 import { BlockContent } from "../../components/block-content/BlockContent/BlockContent";
 import { ImageAndDescDisplay } from "../../components/block-content/ImageAndDescDisplay/ImageAndDescDisplay";
 import { TitleAndTextBlock } from "../../components/block-content/TitleAndTextBlock/TitleAndTextBlock";
+import { ImageWithNavbar } from "../../components/ImageWithNavbar/ImageWithNavbar";
 import { ThemeFooter } from "../../components/ThemeFooter/ThemeFooter";
-import { useFetch } from "../../hooks/useFetch";
 
 import css from "./style.module.scss";
 
@@ -29,14 +29,9 @@ export default function Home() {
 	// 	getItems();
 	// }, []);
 
-	const { data, setData, loading, setLoading, error, setError } = useFetch(
-		"https://us.api.blizzard.com/data/wow/search/item?namespace=static-us&name.en_US=rat&orderby=id&_page=1",
-		"&access_token=US2LFLMDJNpbOFgdyyD8T26vJHjsQg0KeX"
-	);
-
 	return (
-		<div>
-			{/* <ImageWithNavbar /> */}
+		<div className={css.container}>
+			<ImageWithNavbar />
 
 			<TitleAndTextBlock />
 			<div className={css.block_content_grid_container}>

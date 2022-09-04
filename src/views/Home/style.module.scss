@@ -1,3 +1,8 @@
+.container {
+	min-height: 100vh;
+	position: relative;
+}
+
 .block_content_grid_container {
 	border: 1px solid red;
 	display: grid;

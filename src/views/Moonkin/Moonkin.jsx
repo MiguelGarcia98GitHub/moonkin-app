@@ -5,8 +5,8 @@ import css from "./style.module.scss";
 
 export const Moonkin = () => {
 	return (
-		<div>
-			<div className={css.container}>
+		<div className={css.container}>
+			<div className={css.wrapper}>
 				<Link to="/search-item">
 					<MoonkinItem backgroundColor={"rebeccapurple"} text={"Search Item"} />
 				</Link>
