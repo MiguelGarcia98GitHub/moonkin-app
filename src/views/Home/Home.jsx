@@ -1,37 +1,14 @@
-import { BlockContent } from "../../components/block-content/BlockContent/BlockContent";
-import { ImageAndDescDisplay } from "../../components/block-content/ImageAndDescDisplay/ImageAndDescDisplay";
-import { TitleAndTextBlock } from "../../components/block-content/TitleAndTextBlock/TitleAndTextBlock";
-import { ImageWithNavbar } from "../../components/ImageWithNavbar/ImageWithNavbar";
+import { BlockContent } from "../../components/BlockContent/BlockContent";
+import { ImageAndDescDisplay } from "../../components/ImageAndDescDisplay/ImageAndDescDisplay";
 import { ThemeFooter } from "../../components/ThemeFooter/ThemeFooter";
+import { TitleAndTextBlock } from "../../components/TitleAndTextBlock/TitleAndTextBlock";
 
 import css from "./style.module.scss";
 
 export default function Home() {
-	// const [data, setData] = useState([]);
-	// const [error, setError] = useState(false);
-	// const [loading, setLoading] = useState(true);
-
-	// useEffect(() => {
-	// 	const getItems = async () => {
-	// 		try {
-	// 			const itemsUrl =
-	// 				"https://us.api.blizzard.com/data/wow/search/item?namespace=static-us&name.en_US=sword&orderby=id&_page=1";
-	// 			const response = await axios.get(`${itemsUrl}${access_token}`);
-	// 			setData(response);
-	// 			setLoading(false);
-	// 		} catch (err) {
-	// 			setLoading(false);
-	// 			setError(true);
-	// 			console.log(err);
-	// 		}
-	// 	};
-
-	// 	getItems();
-	// }, []);
-
 	return (
 		<div className={css.container}>
-			<ImageWithNavbar />
+			{/* <ImageWithNavbar /> */}
 
 			<TitleAndTextBlock />
 			<div className={css.block_content_grid_container}>
