@@ -1,9 +1,19 @@
-// COLORS
+// COLORS (TEST)
 $white: aliceblue;
 $black: hsl(0, 0%, 13%);
 $fullBlack: hsl(0, 0%, 0%);
 $softBlack: #2f2f25;
 $blue: royalblue;
+
+// THEME COLORS (ONLY FOR THE THEMEREDUCER REFERENCE)
+$legion-default-theme-bg: "background-color: rgba(126, 211, 33, 0.5)";
+$legion-default-theme-shadow: "box-shadow: 0 8px 32px 0 rgba(30, 150, 30, 0.5)";
+
+$horde-theme-bg: "background-color: rgba(150, 0, 0, 0.5)";
+$horde-theme-shadow: "box-shadow: 0 8px 32px 0 rgba(250, 0, 20, 0.5)";
+
+$alliance-theme-bg: "background-color: rgba(5, 46, 93, 0.5)";
+$alliance-theme-shadow: "box-shadow: 0 8px 32px 0 rgba(0, 0, 170, 0.5)";
 
 // MEDIA QUERIES
 $extra-large-screen: 1201px;

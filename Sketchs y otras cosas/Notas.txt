@@ -3,6 +3,10 @@ filter: drop-shadow(0 0 0.75rem crimson);
 filter: drop-shadow(0 -6mm 4mm rgb(160, 0, 210));
 filter: drop-shadow(30px 10px 4px #4444dd);
 
+aspect-ratio
+clip-path (herramiente clippie)
+cuando pongamos un :hover tambien ponerle un :focus para usuarios que van con teclado, hariamos button:hover, button:focus {...etc asi usamos exactamente los mismos estilos cuando vayamos viajando con el teclado y con el TAB
+
 COSAS A HACER:
 Poner QR personalizado en el footer
 

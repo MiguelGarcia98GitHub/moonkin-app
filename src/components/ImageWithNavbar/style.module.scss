@@ -2,10 +2,14 @@
 	position: relative;
 	text-align: center;
 
-	.video {
+	// .video {
+	// 	filter: brightness(0.7);
+	// 	min-width: 40rem;
+	// 	width: 100%;
+	// }
+
+	.img {
 		filter: brightness(0.5);
-		min-width: 40rem;
-		width: 100%;
 	}
 
 	.navbar_left {
@@ -21,7 +25,6 @@
 	}
 
 	.main_container {
-		border: 1px solid red;
 		bottom: 5rem;
 		left: 3rem;
 		max-height: 30rem;

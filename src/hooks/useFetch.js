@@ -10,16 +10,20 @@ export const useFetch = url => {
 		const fetchData = async () => {
 			try {
 				const response = await fetch(
-					`${url}${"&access_token=USrbH4jbPT1ocEO8Mt4eRLtMPVJZqwbP6A"}`
+					`${url}${"&access_token=USXfEF0r8EuvQqyYnInRgPTnTSb35HHl22"}`
 				);
 				const data = await response.json();
 				setData(data);
-				setLoading(false);
-				setError(false);
+				setTimeout(() => {
+					setLoading(false);
+					setError(false);
+				}, 500);
 			} catch (e) {
 				setData([]);
-				setLoading(false);
-				setError(true);
+				setTimeout(() => {
+					setLoading(false);
+					setError(true);
+				}, 500);
 			}
 		};
 

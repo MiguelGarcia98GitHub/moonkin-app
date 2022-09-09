@@ -3,10 +3,10 @@ import css from "./style.module.scss";
 export const ImageWithNavbar = () => {
 	return (
 		<div className={css.container}>
-			<video className={css.video} autoPlay muted loop id="liveBg">
+			{/* <video className={css.video} autoPlay muted loop id="liveBg">
 				<source src="illidan-live-bg.mp4" type="video/mp4" />
-			</video>
-			{/* <img className={css.img} src="block-background-1.jpg" alt="" /> */}
+			</video> */}
+			<img className={css.img} src="block-background-1.jpg" alt="" />
 			<div className={css.navbar_left}>
 				<h3>LOGO</h3>
 			</div>

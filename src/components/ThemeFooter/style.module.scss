@@ -1,15 +1,21 @@
 .container {
+	backdrop-filter: blur(4px);
+	border-radius: 10px 10px 0 0;
 	bottom: 0;
+	cursor: pointer;
 	height: 10rem;
 	position: absolute;
 	width: 100%;
 
 	.icon_container {
 		align-items: center;
+		cursor: pointer;
 		display: flex;
 		justify-content: center;
 
 		.icon {
+			cursor: pointer;
+			user-select: none;
 			width: 8rem;
 		}
 	}

@@ -1,5 +1,6 @@
 import { BlockContent } from "../../components/BlockContent/BlockContent";
 import { ImageAndDescDisplay } from "../../components/ImageAndDescDisplay/ImageAndDescDisplay";
+import { ImageWithNavbar } from "../../components/ImageWithNavbar/ImageWithNavbar";
 import { ThemeFooter } from "../../components/ThemeFooter/ThemeFooter";
 import { TitleAndTextBlock } from "../../components/TitleAndTextBlock/TitleAndTextBlock";
 
@@ -8,8 +9,7 @@ import css from "./style.module.scss";
 export default function Home() {
 	return (
 		<div className={css.container}>
-			{/* <ImageWithNavbar /> */}
-
+			<ImageWithNavbar />
 			<TitleAndTextBlock />
 			<div className={css.block_content_grid_container}>
 				<BlockContent
@@ -73,7 +73,7 @@ export default function Home() {
 			<BtnLeftArrow />
 			<BtnRightArrow />
 			<FooterGreenBackground /> */}
-			<ThemeFooter icon={"icon-1.png"} backgroundColor={"green"} />
+			<ThemeFooter icon={"icon-1.png"} />
 		</div>
 	);
 }

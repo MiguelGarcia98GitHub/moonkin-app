@@ -1,40 +1,85 @@
-import { useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { SpecificItem } from "../../components/SpecificItem/SpecificItem";
 import { ThemeFooter } from "../../components/ThemeFooter/ThemeFooter";
+import { useThemeContext } from "../../context/theme_context";
 import { useDebounce } from "../../hooks/useDebounce";
-import { useFetch } from "../../hooks/useFetch";
 import css from "./style.module.scss";
 
 export const SearchItem = () => {
 	const [inputTextValue, setInputTextValue] = useState("");
+	const [data, setData] = useState();
 	const debounce = useDebounce();
 
-	function handleInput(e) {
-		const text = e.target.value;
-		debounce(() => setInputTextValue(text));
-	}
+	const {
+		backgroundColor,
+		boxShadow,
+		currentTheme,
+		themeLegion,
+		themeHorde,
+		themeAlliance
+	} = useThemeContext();
 
-	const { data, setData, loading, error } = useFetch(
-		`https://us.api.blizzard.com/data/wow/search/item?namespace=static-us&name.en_US=${inputTextValue}&orderby=id&_page=1`
-	);
-
-	// const callBackFunc = useCallback(
-	// 	e => {
-	// 		setInputTextValue(e.target.value);
-	// 	},
-	// 	[data]
-	// );
-
-	const tempListItems = [];
-	const listItems = data?.results?.map(item => {
-		if (tempListItems.length === 200) {
-			tempListItems.push(item);
+	useEffect(() => {
+		if (currentTheme === "legion") {
+			themeLegion();
 		}
 
-		return <SpecificItem itemData={item} key={uuidv4()} />;
-	});
+		if (currentTheme === "horde") {
+			themeHorde();
+		}
 
+		if (currentTheme === "alliance") {
+			themeAlliance();
+		}
+	}, []);
+
+	useEffect(() => {
+		let active = true;
+		load();
+		return () => {
+			active = false;
+		};
+
+		async function load() {
+			const res = await (
+				await fetch(
+					`https://us.api.blizzard.com/data/wow/search/item?namespace=static-us&name.en_US=${inputTextValue}&orderby=id&_page=1&access_token=USXfEF0r8EuvQqyYnInRgPTnTSb35HHl22`
+				)
+			).json();
+			if (!active) {
+				return;
+			}
+			setData(res);
+		}
+	}, [inputTextValue]);
+
+	const handleInput = useCallback(
+		async e => {
+			console.log("input is: ", e.target.value);
+			const debounced = debounce(() => setInputTextValue(e.target.value));
+			return e => {
+				console.log("what is e???", e);
+				const {
+					target: { value }
+				} = e;
+				debounced(value);
+			};
+		},
+		[debounce]
+	);
+
+	// const tempListItems = [];
+	const listItems = useMemo(() => {
+		console.log("what is data?", data);
+		return data?.results?.map(item => {
+			// if (tempListItems.length === 200) {
+			//     tempListItems.push(item);
+			// }
+
+			return <SpecificItem itemData={item} key={uuidv4()} />;
+		});
+	}, [data]);
 	if (listItems) {
 		return (
 			<div className={css.container}>
@@ -43,6 +88,7 @@ export const SearchItem = () => {
 					onClick={() => {
 						console.log(data.results);
 					}}
+					style={{ backgroundColor: backgroundColor, boxShadow: boxShadow }}
 				>
 					<div className={css.text_input_wrapper}>
 						<input

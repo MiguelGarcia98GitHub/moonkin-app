@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useFetch } from "../../hooks/useFetch";
+import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
 import css from "./style.module.scss";
 
 export const SpecificItem = ({ itemData }) => {
@@ -48,7 +49,7 @@ export const SpecificItem = ({ itemData }) => {
 	}
 
 	// https://us.api.blizzard.com/data/wow/media/item/32236?namespace=static-9.2.7_44981-us&access_token=
-	const { data, setData, loading, error } = useFetch(
+	const { data, setData, setLoading, loading, error } = useFetch(
 		`https://us.api.blizzard.com/data/wow/media/item/${itemID}?namespace=static-9.2.7_44981-us`
 	);
 	// console.log(data);
@@ -61,7 +62,6 @@ export const SpecificItem = ({ itemData }) => {
 			} else if (itemData.data.quality.type === "COMMON") {
 				setBackgroundCol("rgba(255, 255, 255, 0.7)");
 				setTextCol("black");
-				5;
 			} else if (itemData.data.quality.type === "UNCOMMON") {
 				setBackgroundCol("rgba(30, 255, 0, 0.7)");
 				setTextCol("black");
@@ -82,20 +82,31 @@ export const SpecificItem = ({ itemData }) => {
 				setTextCol("black");
 			}
 		}
-	});
+	}, [itemData]);
+
+	if (loading) {
+		return (
+			<div className={css.spinner}>
+				<LoadingSpinner />
+			</div>
+		);
+	}
 
 	if (data && itemData) {
 		return (
 			<div
-				style={{ backgroundColor: backgroundCol, color: textCol }}
 				className={css.container}
 				onClick={() => {
 					console.log(itemData);
 				}}
 			>
-				<div className={css.img_wrapper}>
+				<div
+					className={css.img_wrapper}
+					style={{ backgroundColor: backgroundCol, color: textCol }}
+				>
 					{data && <img className={css.img} src={data.assets[0].value}></img>}
 				</div>
+
 				<div className={css.item_name_wrapper}>{itemData.data.name.en_GB}</div>
 				<div className={css.item_class_wrapper}>
 					{itemData.data.item_class.name.en_GB}
@@ -106,8 +117,8 @@ export const SpecificItem = ({ itemData }) => {
 				<div className={css.item_price_wrapper}>
 					{goldCost ? (
 						<div>
-							<div style={{ textAlign: "center" }}>{goldCost}</div>
-							<div>
+							<div className={css.cost_container}>{goldCost}</div>
+							<div className={css.coin_container}>
 								<img src="gold.png" alt="" />
 							</div>
 						</div>
@@ -116,8 +127,8 @@ export const SpecificItem = ({ itemData }) => {
 					)}
 					{silverCost ? (
 						<div>
-							<div style={{ textAlign: "center" }}>{silverCost}</div>
-							<div>
+							<div className={css.cost_container}>{silverCost}</div>
+							<div className={css.coin_container}>
 								<img src="silver.png" alt="" />
 							</div>
 						</div>
@@ -126,17 +137,19 @@ export const SpecificItem = ({ itemData }) => {
 					)}
 					{cooperCost ? (
 						<div>
-							<div style={{ textAlign: "center" }}>{cooperCost}</div>
-							<div>
+							<div className={css.cost_container}>{cooperCost}</div>
+							<div className={css.coin_container}>
 								<img src="copper.png" alt="" />
 							</div>
 						</div>
 					) : (
-						<div style={{ textAlign: "center", fontWeight: "700" }}>
-							Cant be bought
-						</div>
+						""
 					)}
 				</div>
+
+				{/* <div style={{ textAlign: "center", fontWeight: "700" }}>
+							Cant be bought
+						</div> */}
 				<div className={css.item_equippable_wrapper}>
 					{itemData.data.is_equippable ? (
 						<span style={{ color: textCol, fontWeight: "700" }}>
