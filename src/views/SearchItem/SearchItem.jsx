@@ -44,7 +44,7 @@ export const SearchItem = () => {
 		async function load() {
 			const res = await (
 				await fetch(
-					`https://us.api.blizzard.com/data/wow/search/item?namespace=static-us&name.en_US=${inputTextValue}&orderby=id&_page=1&access_token=USXfEF0r8EuvQqyYnInRgPTnTSb35HHl22`
+					`https://us.api.blizzard.com/data/wow/search/item?namespace=static-us&name.en_US=${inputTextValue}&orderby=id&_page=1&access_token=USwkXbCTpKoIUU00X97SY06KrUxbFJp1RP`
 				)
 			).json();
 			if (!active) {
@@ -69,36 +69,26 @@ export const SearchItem = () => {
 		[debounce]
 	);
 
-	// const tempListItems = [];
 	const listItems = useMemo(() => {
 		console.log("what is data?", data);
 		return data?.results?.map(item => {
-			// if (tempListItems.length === 200) {
-			//     tempListItems.push(item);
-			// }
-
 			return <SpecificItem itemData={item} key={uuidv4()} />;
 		});
 	}, [data]);
+
 	if (listItems) {
 		return (
 			<div className={css.container}>
 				<div
-					className={css.text_input_box_wrapper}
-					onClick={() => {
-						console.log(data.results);
-					}}
+					className={css.text_input_wrapper}
 					style={{ backgroundColor: backgroundColor, boxShadow: boxShadow }}
 				>
-					<div className={css.text_input_wrapper}>
-						<input
-							className={css.text_input}
-							type="text"
-							placeholder="Search Item..."
-							// onChange={handleInput}
-							onChange={handleInput}
-						/>
-					</div>
+					<input
+						className={css.text_input}
+						type="text"
+						placeholder="Search Item..."
+						onChange={handleInput}
+					/>
 				</div>
 				<div className={css.list_container}>{data && listItems}</div>
 				<ThemeFooter backgroundColor={"green"} icon={"icon-1.png"} />

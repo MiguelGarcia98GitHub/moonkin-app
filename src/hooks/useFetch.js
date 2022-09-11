@@ -10,7 +10,7 @@ export const useFetch = url => {
 		const fetchData = async () => {
 			try {
 				const response = await fetch(
-					`${url}${"&access_token=USXfEF0r8EuvQqyYnInRgPTnTSb35HHl22"}`
+					`${url}${"&access_token=USwkXbCTpKoIUU00X97SY06KrUxbFJp1RP"}`
 				);
 				const data = await response.json();
 				setData(data);

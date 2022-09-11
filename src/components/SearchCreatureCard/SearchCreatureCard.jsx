@@ -1,21 +1,48 @@
+import { useEffect } from "react";
+import { useThemeContext } from "../../context/theme_context";
 import { useFetch } from "../../hooks/useFetch";
 import { SpinnerFire } from "../SpinnerFire/SpinnerFire";
 import css from "./style.module.scss";
 
 export const SearchCreatureCard = ({ creatureData }) => {
-	const itemID =
+	const creatureMediaID =
 		creatureData?.results[0]?.data?.creature_displays[0].id || 30221;
 
 	const { data: creatureMedia, loading } = useFetch(
-		`https://us.api.blizzard.com/data/wow/media/creature-display/${itemID}?namespace=static-us&locale=en_US`
+		`https://us.api.blizzard.com/data/wow/media/creature-display/${creatureMediaID}?namespace=static-us&locale=en_US` // 30221 test itemID
 	);
 
-	//https://us.api.blizzard.com/data/wow/media/creature-display/30221?namespace=static-us&locale=en_US&access_token=USXfEF0r8EuvQqyYnInRgPTnTSb35HHl22
+	const {
+		backgroundColor,
+		boxShadow,
+		currentTheme,
+		themeLegion,
+		themeHorde,
+		themeAlliance
+	} = useThemeContext();
+
+	console.log(backgroundColor);
+	console.log(boxShadow);
+
+	useEffect(() => {
+		if (currentTheme === "legion") {
+			themeLegion();
+		}
+
+		if (currentTheme === "horde") {
+			themeHorde();
+		}
+
+		if (currentTheme === "alliance") {
+			themeAlliance();
+		}
+	}, []);
 
 	if (loading) {
 		return (
 			<div
 				className={css.container}
+				style={{ backgroundColor: backgroundColor, boxShadow: boxShadow }}
 				onClick={() => {
 					console.log(creatureData);
 					console.log(itemID);
@@ -33,6 +60,7 @@ export const SearchCreatureCard = ({ creatureData }) => {
 		return (
 			<div
 				className={css.container}
+				style={{ backgroundColor: backgroundColor, boxShadow: boxShadow }}
 				onClick={() => {
 					console.log(creatureData);
 					console.log(itemID);

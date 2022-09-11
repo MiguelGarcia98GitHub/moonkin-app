@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useThemeContext } from "../../context/theme_context";
 import css from "./style.module.scss";
 
 export const BlockContent = ({
@@ -7,9 +8,21 @@ export const BlockContent = ({
 	icon,
 	title,
 	text,
-	externalShadowColor
+	externalShadowColor,
+	changeThemeTo
 }) => {
 	const [hover, setHover] = useState(false);
+	let themeValue = "";
+
+	const {
+		backgroundColor,
+		boxShadow,
+		currentTheme,
+		themeLegion,
+		themeHorde,
+		themeAlliance
+	} = useThemeContext();
+
 	return (
 		<Link to="/moonkin">
 			<div
@@ -37,6 +50,15 @@ export const BlockContent = ({
 				}}
 				onMouseLeave={() => {
 					setHover(false);
+				}}
+				onClick={() => {
+					if (changeThemeTo === "horde") {
+						themeHorde();
+					}
+
+					if (changeThemeTo === "alliance") {
+						themeAlliance();
+					}
 				}}
 			>
 				<div className={css.block_content}>

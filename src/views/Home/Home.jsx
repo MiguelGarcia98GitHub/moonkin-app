@@ -20,6 +20,7 @@ export default function Home() {
 						"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consequat semper viverra nam libero justo laoreet. Ultricies lacus sed turpis tincidunt id."
 					}
 					externalShadowColor={"rgb(179, 2, 0)"}
+					changeThemeTo={"horde"}
 				/>
 				<BlockContent
 					backgroundImage={"alliance.jpg"}
@@ -29,6 +30,7 @@ export default function Home() {
 						"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consequat semper viverra nam libero justo laoreet. Ultricies lacus sed turpis tincidunt id."
 					}
 					externalShadowColor={"rgb(0, 62, 212)"}
+					changeThemeTo={"alliance"}
 				/>
 			</div>
 

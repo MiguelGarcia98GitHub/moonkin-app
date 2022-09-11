@@ -10,6 +10,7 @@
 		border-radius: 4rem;
 		display: flex;
 		justify-content: center;
+		margin-left: -2rem;
 
 		.img {
 			clip-path: polygon(
@@ -32,15 +33,19 @@
 		background-color: rgba(50, 50, 70, 0.5);
 		border-bottom: 1px solid black;
 		border-top: 1px solid black;
+
 		display: flex;
 		font-size: 2rem;
 		font-weight: 800;
 		justify-content: center;
-		padding: 1rem;
+		margin-left: -6rem;
+		padding-left: 6.25rem;
+		z-index: -99;
 	}
 
 	.item_class_wrapper {
 		align-items: center;
+		background-color: rgba(50, 50, 70, 0.5);
 		border: 1px solid black;
 		display: flex;
 		font-size: 1.8rem;
@@ -55,6 +60,7 @@
 
 	.item_price_wrapper {
 		align-items: center;
+		background-color: rgba(50, 50, 70, 0.5);
 		border: 1px solid black;
 		display: grid;
 		font-size: 1.8rem;
@@ -76,6 +82,7 @@
 
 	.item_equippable_wrapper {
 		align-items: center;
+		background-color: rgba(50, 50, 70, 0.5);
 		border: 1px solid black;
 		display: flex;
 		font-size: 1.8rem;
@@ -86,6 +93,7 @@
 
 	.item_stackable_wrapper {
 		align-items: center;
+		background-color: rgba(50, 50, 70, 0.5);
 		border: 1px solid black;
 		display: flex;
 		font-size: 1.8rem;

@@ -1,8 +1,33 @@
+import { useEffect } from "react";
+import { useThemeContext } from "../../context/theme_context";
 import css from "./style.module.scss";
 
 export const ImageWithNavbar = () => {
+	const {
+		backgroundColor,
+		boxShadow,
+		currentTheme,
+		themeLegion,
+		themeHorde,
+		themeAlliance
+	} = useThemeContext();
+
+	useEffect(() => {
+		if (currentTheme === "legion") {
+			themeLegion();
+		}
+
+		if (currentTheme === "horde") {
+			themeHorde();
+		}
+
+		if (currentTheme === "alliance") {
+			themeAlliance();
+		}
+	}, []);
+
 	return (
-		<div className={css.container}>
+		<div className={css.container} style={{ boxShadow: boxShadow }}>
 			{/* <video className={css.video} autoPlay muted loop id="liveBg">
 				<source src="illidan-live-bg.mp4" type="video/mp4" />
 			</video> */}

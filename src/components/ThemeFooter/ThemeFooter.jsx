@@ -1,11 +1,12 @@
+import { useEffect } from "react";
 import { useThemeContext } from "../../context/theme_context";
 import css from "./style.module.scss";
-import { useEffect } from "react";
 
-export const ThemeFooter = ({ icon }) => {
+export const ThemeFooter = () => {
 	const {
 		backgroundColor,
 		boxShadow,
+		currentIcon,
 		currentTheme,
 		themeLegion,
 		themeHorde,
@@ -51,7 +52,7 @@ export const ThemeFooter = ({ icon }) => {
 					handleThemeChange();
 				}}
 			>
-				<img className={css.icon} src={icon} alt="" />
+				<img className={css.icon} src={currentIcon} alt="" />
 			</div>
 		</div>
 	);

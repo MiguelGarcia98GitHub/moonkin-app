@@ -5,7 +5,6 @@ import css from "./style.module.scss";
 
 export const SpecificItem = ({ itemData }) => {
 	const [backgroundCol, setBackgroundCol] = useState("");
-	const [textCol, setTextCol] = useState("");
 	const itemID = itemData.data.media.id;
 	const purchasePrice = itemData.data.purchase_price;
 	let purchasePriceRender = "";
@@ -57,23 +56,19 @@ export const SpecificItem = ({ itemData }) => {
 	useEffect(() => {
 		if (itemData) {
 			if (itemData.data.quality.type === "POOR") {
-				setBackgroundCol("rgba(157,157,157, 0.7)");
-				setTextCol("black");
+				setBackgroundCol("rgba(157,157,157, 1)");
 			} else if (itemData.data.quality.type === "COMMON") {
-				setBackgroundCol("rgba(255, 255, 255, 0.7)");
-				setTextCol("black");
+				setBackgroundCol("rgba(255, 255, 255, 1)");
 			} else if (itemData.data.quality.type === "UNCOMMON") {
-				setBackgroundCol("rgba(30, 255, 0, 0.7)");
-				setTextCol("black");
+				setBackgroundCol("rgba(30, 255, 0, 1)");
 			} else if (itemData.data.quality.type === "RARE") {
-				setBackgroundCol("rgba(0, 112, 221, 0.7)");
+				setBackgroundCol("rgba(0, 112, 221, 1)");
 			} else if (itemData.data.quality.type === "EPIC") {
-				setBackgroundCol("rgba(163, 53, 238, 0.7)");
+				setBackgroundCol("rgba(163, 53, 238, 1)");
 			} else if (itemData.data.quality.type === "LEGENDARY") {
-				setBackgroundCol("rgba(255, 128, 0, 0.7)");
+				setBackgroundCol("rgba(255, 128, 0, 1)");
 			} else if (itemData.data.quality.type === "ARTIFACT") {
-				setBackgroundCol("rgba(230, 204, 128, 0.7)");
-				setTextCol("black");
+				setBackgroundCol("rgba(230, 204, 128, 1)");
 			} else if (
 				itemData.data.quality.type === "HEIRLOOM" ||
 				itemData.data.quality.type === "WOW TOKEN"
@@ -102,7 +97,11 @@ export const SpecificItem = ({ itemData }) => {
 			>
 				<div
 					className={css.img_wrapper}
-					style={{ backgroundColor: backgroundCol, color: textCol }}
+					style={{
+						backgroundColor: backgroundCol,
+						boxShadow: `0 8px 32px 0 ${backgroundCol}`,
+						opacity: 1
+					}}
 				>
 					{data && <img className={css.img} src={data.assets[0].value}></img>}
 				</div>
@@ -152,7 +151,7 @@ export const SpecificItem = ({ itemData }) => {
 						</div> */}
 				<div className={css.item_equippable_wrapper}>
 					{itemData.data.is_equippable ? (
-						<span style={{ color: textCol, fontWeight: "700" }}>
+						<span style={{ color: "greenyellow", fontWeight: "700" }}>
 							Equippable
 						</span>
 					) : (
@@ -163,7 +162,9 @@ export const SpecificItem = ({ itemData }) => {
 				</div>
 				<div className={css.item_stackable_wrapper}>
 					{itemData.data.is_stackable ? (
-						<span style={{ color: textCol, fontWeight: "700" }}>Stackable</span>
+						<span style={{ color: "greenyellow", fontWeight: "700" }}>
+							Stackable
+						</span>
 					) : (
 						<span style={{ color: "red", fontWeight: "700" }}>
 							Non stackable
