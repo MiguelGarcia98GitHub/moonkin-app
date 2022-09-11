@@ -18,3 +18,17 @@
 	padding-bottom: 10rem;
 	place-items: center;
 }
+
+@media (max-width: 414px) {
+	.container {
+		min-height: 290vh;
+	}
+
+	.block_content_grid_container {
+		grid-template-columns: 1fr;
+	}
+
+	.image_and_desc_display_container {
+		grid-template-columns: 1fr;
+	}
+}

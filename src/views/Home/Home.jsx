@@ -1,6 +1,7 @@
 import { BlockContent } from "../../components/BlockContent/BlockContent";
+import { HeroBackground } from "../../components/HeroBackground/HeroBackground";
 import { ImageAndDescDisplay } from "../../components/ImageAndDescDisplay/ImageAndDescDisplay";
-import { ImageWithNavbar } from "../../components/ImageWithNavbar/ImageWithNavbar";
+import { Navbar } from "../../components/Navbar/Navbar";
 import { ThemeFooter } from "../../components/ThemeFooter/ThemeFooter";
 import { TitleAndTextBlock } from "../../components/TitleAndTextBlock/TitleAndTextBlock";
 
@@ -9,7 +10,7 @@ import css from "./style.module.scss";
 export default function Home() {
 	return (
 		<div className={css.container}>
-			<ImageWithNavbar />
+			<HeroBackground children={<Navbar />} />
 			<TitleAndTextBlock />
 			<div className={css.block_content_grid_container}>
 				<BlockContent

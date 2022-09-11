@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useThemeContext } from "../../context/theme_context";
 import css from "./style.module.scss";
 
-export const MoonkinItem = ({ text }) => {
+export const MenuItem = ({ text }) => {
 	const {
 		backgroundColor,
 		boxShadow,

@@ -1,11 +1,9 @@
 .container {
-	backdrop-filter: blur(1px);
-	background: rgba(255, 255, 255, 0.1);
 	border: 1px solid rgba(255, 255, 255, 0.18);
 	border-radius: 0.5vw;
 	display: grid;
 	grid-template-columns: 1fr 0.5fr;
-	height: 240px;
+	height: 250px;
 	padding: 0.75rem;
 	width: 600px;
 
@@ -15,8 +13,8 @@
 		.img {
 			border-radius: 0.2vw;
 			clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-			filter: brightness(1.5);
-			height: 200px;
+			filter: brightness(2) saturate(1.5);
+			height: 210px;
 			width: 400px;
 		}
 	}
@@ -27,5 +25,46 @@
 		.text {
 			font-size: 1.6rem;
 		}
+	}
+}
+
+@media (max-width: 1800px) {
+	.container {
+		height: 230px;
+		width: 450px;
+
+		.img_wrapper {
+			margin: 0.75rem;
+
+			.img {
+				height: 190px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1240px) {
+	.container {
+		height: 200px;
+		width: 375px;
+
+		.img_wrapper {
+			margin: 0.5rem;
+			.img {
+				height: 160px;
+			}
+		}
+
+		.text_wrapper {
+			.text {
+				font-size: 1.4rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 414px) {
+	.container {
+		margin-top: 5rem;
 	}
 }

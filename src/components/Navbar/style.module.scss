@@ -1,0 +1,35 @@
+.container {
+	background: none;
+	display: flex;
+	flex-direction: column;
+	height: 10rem;
+	position: absolute;
+	top: 0%;
+	width: 100%;
+
+	.navbar_left {
+		left: 3%;
+		position: absolute;
+		top: 30%;
+	}
+
+	.navbar_right {
+		position: absolute;
+		right: 3%;
+		top: 30%;
+	}
+}
+
+@media (max-width: 414px) {
+	.container {
+		.navbar_left {
+			font-size: 1.2rem;
+			left: 10%;
+		}
+
+		.navbar_right {
+			font-size: 1.2rem;
+			right: 10%;
+		}
+	}
+}

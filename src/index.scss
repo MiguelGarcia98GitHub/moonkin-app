@@ -6,7 +6,7 @@
 }
 
 body {
-	margin: 0rem 10rem 0rem 10rem;
+	margin: 0rem 30rem 0rem 30rem;
 }
 
 a {
@@ -15,4 +15,102 @@ a {
 	height: 100%;
 	justify-content: center;
 	width: 100%;
+}
+
+// MEDIA QUERIES
+$a: 1900px;
+$b: 1600px;
+$c: 1440px;
+$d: 1240px;
+$e: 900px;
+$f: 768px;
+
+@media (max-width: 1900px) {
+	body {
+		margin: 0rem 28rem 0rem 28rem;
+	}
+}
+
+@media (max-width: 1800px) {
+	body {
+		margin: 0rem 26rem 0rem 26rem;
+	}
+}
+
+@media (max-width: 1700px) {
+	body {
+		margin: 0rem 24rem 0rem 24rem;
+	}
+}
+
+@media (max-width: 1600px) {
+	body {
+		margin: 0rem 22rem 0rem 22rem;
+	}
+}
+
+@media (max-width: 1500px) {
+	body {
+		margin: 0rem 20rem 0rem 20rem;
+	}
+}
+
+@media (max-width: 1400px) {
+	body {
+		margin: 0rem 18rem 0rem 18rem;
+	}
+}
+
+@media (max-width: 1300px) {
+	body {
+		margin: 0rem 16rem 0rem 16rem;
+	}
+}
+
+@media (max-width: 1200px) {
+	body {
+		margin: 0rem 14rem 0rem 14rem;
+	}
+}
+
+@media (max-width: 1100px) {
+	body {
+		margin: 0rem 12rem 0rem 12rem;
+	}
+}
+
+@media (max-width: 1000px) {
+	body {
+		margin: 0rem 10rem 0rem 10rem;
+	}
+}
+
+@media (max-width: 900px) {
+	body {
+		margin: 0rem 8rem 0rem 8rem;
+	}
+}
+
+@media (max-width: 800px) {
+	body {
+		margin: 0rem 6rem 0rem 6rem;
+	}
+}
+
+@media (max-width: 700px) {
+	body {
+		margin: 0rem 4rem 0rem 4rem;
+	}
+}
+
+@media (max-width: 600px) {
+	body {
+		margin: 0rem 2rem 0rem 2rem;
+	}
+}
+
+@media (max-width: 600px) {
+	body {
+		margin: 0rem 1rem 0rem 1rem;
+	}
 }

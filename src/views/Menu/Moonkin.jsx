@@ -1,26 +1,23 @@
 import { Link } from "react-router-dom";
-import { MoonkinItem } from "../../components/MoonkinItem/MoonkinItem";
+import { MenuItem } from "../../components/MenuItem/MoonkinItem";
 import { ThemeFooter } from "../../components/ThemeFooter/ThemeFooter";
 import css from "./style.module.scss";
 
-export const Moonkin = () => {
+export const Menu = () => {
 	return (
 		<div className={css.container}>
 			<div className={css.wrapper}>
 				<Link to="/search-item">
-					<MoonkinItem backgroundColor={"rebeccapurple"} text={"Search Item"} />
+					<MenuItem backgroundColor={"rebeccapurple"} text={"Search Item"} />
 				</Link>
 				<Link to="/search-creature">
-					<MoonkinItem
+					<MenuItem
 						backgroundColor={"rebeccapurple"}
 						text={"Search Creature"}
 					/>
 				</Link>
 				<Link to="/search-mount">
-					<MoonkinItem
-						backgroundColor={"rebeccapurple"}
-						text={"Search Mount"}
-					/>
+					<MenuItem backgroundColor={"rebeccapurple"} text={"Search Mount"} />
 				</Link>
 			</div>
 			<ThemeFooter backgroundColor={"green"} icon={"icon-1.png"} />
