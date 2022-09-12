@@ -109,8 +109,14 @@ $f: 768px;
 	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
 	body {
 		margin: 0rem 1rem 0rem 1rem;
+	}
+}
+
+@media (max-width: 400px) {
+	body {
+		margin: 0rem 0.5rem 0rem 0.5rem;
 	}
 }

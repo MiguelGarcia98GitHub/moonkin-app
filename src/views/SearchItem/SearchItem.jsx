@@ -44,7 +44,7 @@ export const SearchItem = () => {
 		async function load() {
 			const res = await (
 				await fetch(
-					`https://us.api.blizzard.com/data/wow/search/item?namespace=static-us&name.en_US=${inputTextValue}&orderby=id&_page=1&access_token=USwkXbCTpKoIUU00X97SY06KrUxbFJp1RP`
+					`https://us.api.blizzard.com/data/wow/search/item?namespace=static-us&name.en_US=${inputTextValue}&orderby=id&_page=1&access_token=USZlkUihyf4sC1fK0wUE53CHddLcYRzQUR`
 				)
 			).json();
 			if (!active) {

@@ -89,12 +89,7 @@ export const SpecificItem = ({ itemData }) => {
 
 	if (data && itemData) {
 		return (
-			<div
-				className={css.container}
-				onClick={() => {
-					console.log(itemData);
-				}}
-			>
+			<div className={css.container}>
 				<div
 					className={css.img_wrapper}
 					style={{
@@ -109,6 +104,7 @@ export const SpecificItem = ({ itemData }) => {
 				<div className={css.item_name_wrapper}>{itemData.data.name.en_GB}</div>
 				<div className={css.item_class_wrapper}>
 					{itemData.data.item_class.name.en_GB}
+
 					<span className={css.item_subclass}>
 						({itemData.data.item_subclass.name.en_GB})
 					</span>
@@ -118,7 +114,7 @@ export const SpecificItem = ({ itemData }) => {
 						<div>
 							<div className={css.cost_container}>{goldCost}</div>
 							<div className={css.coin_container}>
-								<img src="gold.png" alt="" />
+								<img className={css.coin} src="gold.png" alt="gold coin" />
 							</div>
 						</div>
 					) : (
@@ -128,7 +124,7 @@ export const SpecificItem = ({ itemData }) => {
 						<div>
 							<div className={css.cost_container}>{silverCost}</div>
 							<div className={css.coin_container}>
-								<img src="silver.png" alt="" />
+								<img className={css.coin} src="silver.png" alt="silver coin" />
 							</div>
 						</div>
 					) : (
@@ -138,7 +134,7 @@ export const SpecificItem = ({ itemData }) => {
 						<div>
 							<div className={css.cost_container}>{cooperCost}</div>
 							<div className={css.coin_container}>
-								<img src="copper.png" alt="" />
+								<img className={css.coin} src="copper.png" alt="cooper coin" />
 							</div>
 						</div>
 					) : (
@@ -146,9 +142,6 @@ export const SpecificItem = ({ itemData }) => {
 					)}
 				</div>
 
-				{/* <div style={{ textAlign: "center", fontWeight: "700" }}>
-							Cant be bought
-						</div> */}
 				<div className={css.item_equippable_wrapper}>
 					{itemData.data.is_equippable ? (
 						<span style={{ color: "greenyellow", fontWeight: "700" }}>

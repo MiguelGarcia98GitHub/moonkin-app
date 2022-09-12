@@ -27,6 +27,7 @@
 		align-items: center;
 		display: grid;
 		grid-template-rows: 1fr 1fr 1fr;
+		height: 40%;
 		justify-content: center;
 		text-align: center;
 		width: 100%;
@@ -156,7 +157,7 @@
 
 		.info_wrapper {
 			.name_wrapper {
-				padding: 0 1rem;
+				padding: 0 2rem;
 
 				.name {
 					font-size: 2rem;
