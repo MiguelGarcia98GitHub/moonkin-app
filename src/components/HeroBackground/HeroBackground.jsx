@@ -36,8 +36,8 @@ export const HeroBackground = ({ children }) => {
 				</div>
 				<div className={css.main_text_container}>
 					<h3 className={css.title}>
-						Find all the data you need about items, creatures, mounts and more
-						from the WoW universe
+						Find lots of data about items, creatures, screenshots and more from
+						the WoW universe
 					</h3>
 				</div>
 			</div>

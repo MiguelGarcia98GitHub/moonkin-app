@@ -70,8 +70,9 @@ export const SearchCreatureCard = ({ creatureData }) => {
 				<div className={css.img_wrapper}>
 					<img
 						className={css.img}
-						alt=""
+						alt="creature image"
 						src={creatureMedia?.assets[0]?.value}
+						style={{ boxShadow: boxShadow }}
 					/>
 				</div>
 				<div className={css.info_wrapper}>
