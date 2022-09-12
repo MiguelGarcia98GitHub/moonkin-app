@@ -7,7 +7,8 @@ export const BlockContent = ({
 	backgroundImage,
 	icon,
 	title,
-	text,
+	textAbove,
+	textBelow,
 	externalShadowColor,
 	changeThemeTo
 }) => {
@@ -64,14 +65,18 @@ export const BlockContent = ({
 				<div className={css.block_content}>
 					<div className={css.title_and_icon_container}>
 						<div className={css.icon_container}>
-							<img className={css.icon} src={icon} alt="" />
+							<img className={css.icon} src={icon} alt="choose theme image" />
 						</div>
 						<div className={css.title_container}>
 							<span className={css.title}>{title}</span>
 						</div>
 					</div>
 					<div className={css.text_container}>
-						<div className={css.text}>{text}</div>
+						<div className={css.text}>
+							{textAbove}
+							<br />
+							{textBelow}
+						</div>
 					</div>
 				</div>
 			</div>

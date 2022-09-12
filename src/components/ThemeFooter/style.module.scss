@@ -3,7 +3,7 @@
 	border-radius: 10px 10px 0 0;
 	bottom: 0;
 	cursor: pointer;
-	height: 10rem;
+	height: 10vh;
 	position: absolute;
 	width: 100%;
 
@@ -16,10 +16,12 @@
 		width: 100%;
 
 		.icon {
+			border-radius: 100%;
 			cursor: pointer;
-			height: 100%;
+			filter: brightness(1.2) contrast(1.2);
+			height: 7vh;
 			user-select: none;
-			width: 8rem;
+			width: 7vh;
 		}
 	}
 }

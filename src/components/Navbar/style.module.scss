@@ -14,22 +14,30 @@
 	}
 
 	.navbar_right {
+		cursor: pointer;
+		padding: 1rem;
 		position: absolute;
 		right: 3%;
-		top: 30%;
+		top: 10%;
+
+		&:hover {
+			background-color: rgba(20, 20, 20, 1);
+		}
 	}
 }
 
-@media (max-width: 414px) {
+@media (max-width: 650px) {
 	.container {
 		.navbar_left {
-			font-size: 1.2rem;
-			left: 10%;
+			.navbar_left_text {
+				font-size: 1.3rem;
+			}
 		}
 
 		.navbar_right {
-			font-size: 1.2rem;
-			right: 10%;
+			.navbar_right_text {
+				font-size: 1.3rem;
+			}
 		}
 	}
 }

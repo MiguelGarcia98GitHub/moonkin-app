@@ -32,12 +32,12 @@ export const HeroBackground = ({ children }) => {
 			{children}
 			<div className={css.main_container}>
 				<div className={css.main_title_container}>
-					<h1 className={css.title}>MOONKIN APP</h1>
+					<h1 className={css.title}>GAME DATA APP</h1>
 				</div>
 				<div className={css.main_text_container}>
 					<h3 className={css.title}>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-						fugiat quod placeat laboriosam sunt provident officia!
+						Find all the data you need about items, creatures, mounts and more
+						from the WoW universe
 					</h3>
 				</div>
 			</div>

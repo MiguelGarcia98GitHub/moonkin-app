@@ -17,9 +17,8 @@ export default function Home() {
 					backgroundImage={"horde.jpg"}
 					icon={"horde.jpg"}
 					title={"CHOOSE THE HORDE"}
-					text={
-						"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consequat semper viverra nam libero justo laoreet. Ultricies lacus sed turpis tincidunt id."
-					}
+					textAbove={"Click on the image below to use the Horde theme!"}
+					textBelow={"Show your support to the orcs side!!"}
 					externalShadowColor={"rgb(179, 2, 0)"}
 					changeThemeTo={"horde"}
 				/>
@@ -27,9 +26,8 @@ export default function Home() {
 					backgroundImage={"alliance.jpg"}
 					icon={"alliance.jpg"}
 					title={"CHOOSE THE ALLIANCE"}
-					text={
-						"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consequat semper viverra nam libero justo laoreet. Ultricies lacus sed turpis tincidunt id."
-					}
+					textAbove={"Click on the image below to use the Alliance theme!"}
+					textBelow={"Show your support to the humans side!!"}
 					externalShadowColor={"rgb(0, 62, 212)"}
 					changeThemeTo={"alliance"}
 				/>
@@ -39,26 +37,30 @@ export default function Home() {
 				<ImageAndDescDisplay
 					img={"game-1.jpg"}
 					text={
-						"Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, voluptas."
+						"Be careful if you visit this place, there is a lot of lava around and some trolls who might not be all too friendly."
 					}
+					title={"Fortress on the iron mines:"}
 				/>
 				<ImageAndDescDisplay
 					img={"game-2.jpg"}
 					text={
-						"Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, voluptas."
+						"This tower was built to watch against hostile enemies in times of conflict."
 					}
+					title={"Watchtower on the snow lands:"}
 				/>
 				<ImageAndDescDisplay
 					img={"game-3.jpg"}
 					text={
-						"Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, voluptas."
+						"Probably built by elves. The house looks great, but the cost of the rent might be costlier than your average rent on Madrid."
 					}
+					title={"House on the forest:"}
 				/>
 				<ImageAndDescDisplay
 					img={"game-4.jpg"}
 					text={
-						"Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, voluptas."
+						"Very romantic looking place. Just be careful to not get bitten by a wild wolf, there are a lot on winter, could be dangerous!"
 					}
+					title={"The Moon Valley:"}
 				/>
 			</div>
 			{/* <div

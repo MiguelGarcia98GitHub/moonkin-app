@@ -52,7 +52,12 @@ export const ThemeFooter = () => {
 					handleThemeChange();
 				}}
 			>
-				<img className={css.icon} src={currentIcon} alt="" />
+				<img
+					className={css.icon}
+					src={currentIcon}
+					alt="theme icon"
+					style={{ boxShadow: boxShadow }}
+				/>
 			</div>
 		</div>
 	);

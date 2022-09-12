@@ -5,7 +5,7 @@ const theme_reducer = (state, action) => {
 			currentTheme: "legion",
 			backgroundColor: "rgba(126, 211, 33, 0.5)",
 			boxShadow: "0 8px 32px 0 rgba(80, 240, 50, 0.5)",
-			currentIcon: "icon-1.png"
+			currentIcon: "legion-icon.jpg"
 		};
 	}
 
@@ -15,7 +15,7 @@ const theme_reducer = (state, action) => {
 			currentTheme: "horde",
 			backgroundColor: "rgba(150, 0, 0, 0.5)",
 			boxShadow: "0 8px 32px 0 rgba(250, 0, 20, 0.5)",
-			currentIcon: "horde.jpg"
+			currentIcon: "horde-icon.jpg"
 		};
 	}
 
@@ -25,7 +25,7 @@ const theme_reducer = (state, action) => {
 			currentTheme: "alliance",
 			backgroundColor: "rgba(5, 46, 93, 0.5)",
 			boxShadow: "0 8px 32px 0 rgba(0, 0, 170, 0.5)",
-			currentIcon: "alliance.jpg"
+			currentIcon: "alliance-icon.jpg"
 		};
 	}
 };
