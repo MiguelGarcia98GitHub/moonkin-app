@@ -26,7 +26,7 @@ export const BlockContent = ({
 
 	return (
 		<Link to="/moonkin">
-			<div
+			<section
 				style={
 					hover
 						? {
@@ -34,7 +34,6 @@ export const BlockContent = ({
 								backgroundPosition: "center center",
 								backgroundRepeat: "no-repeat",
 								filter: `saturate(1.1) brightness(1.3) drop-shadow(0 0 2rem ${externalShadowColor})`,
-								// hue-rotate(0.25turn)
 								backgroundSize: "110% 110%"
 						  }
 						: {
@@ -79,7 +78,7 @@ export const BlockContent = ({
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
 		</Link>
 	);
 };

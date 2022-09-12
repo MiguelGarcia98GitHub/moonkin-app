@@ -27,7 +27,7 @@ export const ImageAndDescDisplay = ({ img, text, title }) => {
 	}, []);
 
 	return (
-		<div
+		<section
 			className={css.container}
 			style={{ backgroundColor: backgroundColor, boxShadow: boxShadow }}
 		>
@@ -40,6 +40,6 @@ export const ImageAndDescDisplay = ({ img, text, title }) => {
 					{text}
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };

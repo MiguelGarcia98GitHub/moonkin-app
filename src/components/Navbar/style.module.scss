@@ -8,6 +8,7 @@
 	width: 100%;
 
 	.navbar_left {
+		cursor: pointer;
 		left: 3%;
 		position: absolute;
 		top: 30%;
@@ -19,6 +20,10 @@
 		position: absolute;
 		right: 3%;
 		top: 10%;
+
+		.navbar_right_text {
+			cursor: pointer;
+		}
 
 		&:hover {
 			background-color: rgba(20, 20, 20, 1);

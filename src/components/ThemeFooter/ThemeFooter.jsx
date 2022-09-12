@@ -42,7 +42,7 @@ export const ThemeFooter = () => {
 	};
 
 	return (
-		<div
+		<footer
 			className={css.container}
 			style={{ backgroundColor: backgroundColor, boxShadow: boxShadow }}
 		>
@@ -59,6 +59,6 @@ export const ThemeFooter = () => {
 					style={{ boxShadow: boxShadow }}
 				/>
 			</div>
-		</div>
+		</footer>
 	);
 };
