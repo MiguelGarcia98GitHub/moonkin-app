@@ -7,8 +7,45 @@ import css from "./style.module.scss";
 
 export const SearchCreature = () => {
 	const [inputTextValue, setInputTextValue] = useState("");
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(false);
 	const [data, setData] = useState();
 	const debounce = useDebounce();
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await fetch(
+					`https://us.api.blizzard.com/data/wow/search/creature?namespace=static-us&name.en_US=${inputTextValue}&orderby=id&_page=1&access_token=USHC6eLcJyZvrVnvN5LH7sYAtifVPBenhx`
+				);
+				const data = await response.json();
+
+				if (data.results.length === 0) {
+					setTimeout(() => {
+						setLoading(false);
+						setError("NO_RESULTS");
+					}, 500);
+				}
+
+				if (data.results.length > 0) {
+					setTimeout(() => {
+						setLoading(false);
+						setError(false);
+						setData(data);
+					}, 500);
+				}
+			} catch (e) {
+				setTimeout(() => {
+					setLoading(false);
+					setError("WEB_DOWN");
+				}, 500);
+			}
+		};
+
+		fetchData();
+	}, [inputTextValue]);
+
+	///////////////////////////////////////////////////////
 
 	const {
 		backgroundColor,
@@ -18,30 +55,6 @@ export const SearchCreature = () => {
 		themeHorde,
 		themeAlliance
 	} = useThemeContext();
-
-	console.log(backgroundColor);
-	console.log(boxShadow);
-
-	useEffect(() => {
-		let active = true;
-		load();
-		return () => {
-			active = false;
-		};
-
-		async function load() {
-			const res = await (
-				await fetch(
-					`https://us.api.blizzard.com/data/wow/search/creature?namespace=static-us&name.en_US=${inputTextValue}&orderby=id&_page=1&access_token=USZlkUihyf4sC1fK0wUE53CHddLcYRzQUR`
-				)
-			).json();
-			if (!active) {
-				return;
-			}
-
-			setData(res);
-		}
-	}, [inputTextValue]);
 
 	useEffect(() => {
 		if (currentTheme === "legion") {
@@ -58,7 +71,12 @@ export const SearchCreature = () => {
 	}, []);
 
 	return (
-		<div className={css.container}>
+		<div
+			className={css.container}
+			onClick={() => {
+				console.log(data);
+			}}
+		>
 			<div
 				className={css.text_input_wrapper}
 				style={{ backgroundColor: backgroundColor, boxShadow: boxShadow }}
@@ -68,11 +86,15 @@ export const SearchCreature = () => {
 					type="text"
 					placeholder="Search Creature..."
 					onChange={e => {
-						setInputTextValue(e.target.value);
+						debounce(setInputTextValue(e.target.value));
 					}}
 				/>
 			</div>
-			<SearchCreatureCard creatureData={data} />
+
+			{loading ? <div>LOADING!!</div> : ""}
+			{!loading && error === "NO_RESULTS" ? <div>NO RESULTS FOUND!</div> : ""}
+			{!loading && error === "WEB_DOWN" ? <div>WEB DOWN!</div> : ""}
+			{!loading && !error ? <SearchCreatureCard creatureData={data} /> : ""}
 			<ThemeFooter icon={"icon-1.png"} backgroundColor={"green"} />
 		</div>
 	);
