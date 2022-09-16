@@ -17,7 +17,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 					<Route exact path="/moonkin" element={<Menu />} />
 					<Route exact path="/search-item" element={<SearchItem />} />
 					<Route exact path="/search-creature" element={<SearchCreature />} />
-					<Route exact path="/search-mount" element={<div>/s mount</div>} />
 				</Routes>
 			</BrowserRouter>
 		</ThemeProvider>

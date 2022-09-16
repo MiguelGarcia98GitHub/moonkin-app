@@ -16,9 +16,6 @@ export const Menu = () => {
 						text={"Search Creature"}
 					/>
 				</Link>
-				<Link to="/search-mount">
-					<MenuItem backgroundColor={"rebeccapurple"} text={"Search Mount"} />
-				</Link>
 			</div>
 			<ThemeFooter backgroundColor={"green"} icon={"icon-1.png"} />
 		</div>
