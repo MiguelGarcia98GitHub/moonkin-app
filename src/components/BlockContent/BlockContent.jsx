@@ -13,16 +13,8 @@ export const BlockContent = ({
 	changeThemeTo
 }) => {
 	const [hover, setHover] = useState(false);
-	let themeValue = "";
 
-	const {
-		backgroundColor,
-		boxShadow,
-		currentTheme,
-		themeLegion,
-		themeHorde,
-		themeAlliance
-	} = useThemeContext();
+	const { themeHorde, themeAlliance } = useThemeContext();
 
 	return (
 		<Link to="/moonkin">

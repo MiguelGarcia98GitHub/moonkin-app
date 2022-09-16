@@ -17,14 +17,7 @@ a {
 	width: 100%;
 }
 
-// MEDIA QUERIES
-$a: 1900px;
-$b: 1600px;
-$c: 1440px;
-$d: 1240px;
-$e: 900px;
-$f: 768px;
-
+// MEDIA QUERIES (BODY ONLY)
 @media (max-width: 1900px) {
 	body {
 		margin: 0rem 28rem 0rem 28rem;

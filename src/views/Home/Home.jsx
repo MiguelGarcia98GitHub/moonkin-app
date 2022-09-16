@@ -1,7 +1,6 @@
 import { BlockContent } from "../../components/BlockContent/BlockContent";
 import { HeroBackground } from "../../components/HeroBackground/HeroBackground";
 import { ImageAndDescDisplay } from "../../components/ImageAndDescDisplay/ImageAndDescDisplay";
-import { Navbar } from "../../components/Navbar/Navbar";
 import { ThemeFooter } from "../../components/ThemeFooter/ThemeFooter";
 import { TitleAndTextBlock } from "../../components/TitleAndTextBlock/TitleAndTextBlock";
 
@@ -10,7 +9,7 @@ import css from "./style.module.scss";
 export default function Home() {
 	return (
 		<div className={css.container}>
-			<HeroBackground children={<Navbar />} />
+			<HeroBackground />
 			<TitleAndTextBlock />
 			<div className={css.block_content_grid_container}>
 				<BlockContent
@@ -63,22 +62,7 @@ export default function Home() {
 					title={"The Moon Valley:"}
 				/>
 			</div>
-			{/* <div
-				onClick={() => {
-					console.log(data);
-				}}
-			>
-				Click text here to console log the data
-			</div>
-			<div>
-				{loading && "Loading..."} {error && "Error!!!"}
-			</div>
-			<BtnMedieval text="Enter Moonkin" />
-			<NavLinkLightUp text="Some Link Goes Here" />
-			<BtnLeftArrow />
-			<BtnRightArrow />
-			<FooterGreenBackground /> */}
-			<ThemeFooter icon={"icon-1.png"} />
+			<ThemeFooter />
 		</div>
 	);
 }

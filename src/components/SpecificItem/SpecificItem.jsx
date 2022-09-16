@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
-import { useFetch } from "../../hooks/useFetch";
-import { LoadingSpinner } from "../LoadingSpinner/LoadingSpinner";
+import { API_URL_access_token } from "../../utils/constants";
+import { SpinnerTwoLights } from "../SpinnerTwoLights/SpinnerTwoLights";
 import css from "./style.module.scss";
 
 export const SpecificItem = ({ itemData }) => {
 	const [backgroundCol, setBackgroundCol] = useState("");
-	const itemID = itemData.data.media.id;
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
+	const [itemMedia, setItemMedia] = useState(null);
+	const itemMediaID = itemData.data.media.id;
 	const purchasePrice = itemData.data.purchase_price;
 	let purchasePriceRender = "";
 	let tempNewPrice = purchasePrice;
@@ -47,11 +50,38 @@ export const SpecificItem = ({ itemData }) => {
 		}
 	}
 
-	// https://us.api.blizzard.com/data/wow/media/item/32236?namespace=static-9.2.7_44981-us&access_token=
-	const { data, setData, setLoading, loading, error } = useFetch(
-		`https://us.api.blizzard.com/data/wow/media/item/${itemID}?namespace=static-9.2.7_44981-us`
-	);
-	// console.log(data);
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const response = await fetch(
+					`https://us.api.blizzard.com/data/wow/media/item/${itemMediaID}?namespace=static-us&locale=en_US${API_URL_access_token}`
+				);
+				const data = await response.json();
+
+				if ((data.code = 404)) {
+					setTimeout(() => {
+						setLoading(false);
+						setError("MEDIA_NOT_FOUND");
+					}, 500);
+				}
+
+				if (data.assets.length !== 0) {
+					setTimeout(() => {
+						setLoading(false);
+						setError(false);
+						setItemMedia(data);
+					}, 500);
+				}
+			} catch (e) {
+				setTimeout(() => {
+					setLoading(false);
+					setError("WEB_DOWN");
+				}, 500);
+			}
+		};
+
+		fetchData();
+	}, [itemData]);
 
 	useEffect(() => {
 		if (itemData) {
@@ -79,28 +109,56 @@ export const SpecificItem = ({ itemData }) => {
 		}
 	}, [itemData]);
 
-	if (loading) {
-		return (
-			<div className={css.spinner}>
-				<LoadingSpinner />
-			</div>
-		);
-	}
+	return (
+		<div className={css.container}>
+			{/* {loading ? (
+				<div className={css.spinner}>
+					<LoadingSpinner />
+				</div>
+			) : (
+				""
+			)}
+			{(!loading && error === "NO_RESULTS_FOUND") ||
+			(!loading && error === "WEB_DOWN") ? (
+				<img className={css.img} src={"interrogation-mark.png"}></img>
+			) : (
+				""
+			)} */}
 
-	if (data && itemData) {
-		return (
-			<div className={css.container}>
+			<>
 				<div
 					className={css.img_wrapper}
-					style={{
-						backgroundColor: backgroundCol,
-						boxShadow: `0 8px 32px 0 ${backgroundCol}`,
-						opacity: 1
-					}}
+					style={
+						itemMedia
+							? {
+									backgroundColor: backgroundCol,
+									boxShadow: `0 8px 32px 0 ${backgroundCol}`,
+									opacity: 1
+							  }
+							: {}
+					}
 				>
-					{data && <img className={css.img} src={data.assets[0].value}></img>}
+					{loading ? (
+						<div className={css.spinner}>
+							<SpinnerTwoLights />
+						</div>
+					) : (
+						""
+					)}
+					{(!loading && error === "NO_RESULTS_FOUND") ||
+					(!loading && error === "WEB_DOWN") ? (
+						<div>
+							<img className={css.img} src={"interrogation-mark.png"} />
+						</div>
+					) : (
+						""
+					)}
+					{!loading && !error ? (
+						<img className={css.img} src={itemMedia?.assets[0]?.value} />
+					) : (
+						""
+					)}
 				</div>
-
 				<div className={css.item_name_wrapper}>{itemData.data.name.en_GB}</div>
 				<div className={css.item_class_wrapper}>
 					{itemData.data.item_class.name.en_GB}
@@ -173,7 +231,7 @@ export const SpecificItem = ({ itemData }) => {
 						""
 					)}
 				</div>
-			</div>
-		);
-	}
+			</>
+		</div>
+	);
 };

@@ -1,6 +1,6 @@
 import css from "./style.module.scss";
 
-export const LoadingSpinner = () => {
+export const SpinnerTwoLights = () => {
 	return (
 		<div className={css.spinner}>
 			<div className={css.loader}>

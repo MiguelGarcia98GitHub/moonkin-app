@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MenuItem } from "../../components/MenuItem/MoonkinItem";
+import { MenuItem } from "../../components/MenuItem/MenuItem";
 import { ThemeFooter } from "../../components/ThemeFooter/ThemeFooter";
 import css from "./style.module.scss";
 

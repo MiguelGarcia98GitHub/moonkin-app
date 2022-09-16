@@ -2,15 +2,9 @@ import { useEffect } from "react";
 import { useThemeContext } from "../../context/theme_context";
 import css from "./style.module.scss";
 
-export const HeroBackground = ({ children }) => {
-	const {
-		backgroundColor,
-		boxShadow,
-		currentTheme,
-		themeLegion,
-		themeHorde,
-		themeAlliance
-	} = useThemeContext();
+export const HeroBackground = () => {
+	const { boxShadow, currentTheme, themeLegion, themeHorde, themeAlliance } =
+		useThemeContext();
 
 	useEffect(() => {
 		if (currentTheme === "legion") {
@@ -29,7 +23,6 @@ export const HeroBackground = ({ children }) => {
 	return (
 		<div className={css.container} style={{ boxShadow: boxShadow }}>
 			<img className={css.img} src="block-background-1.jpg" alt="" />
-			{children}
 			<div className={css.main_container}>
 				<div className={css.main_title_container}>
 					<h1 className={css.title}>GAME DATA APP</h1>

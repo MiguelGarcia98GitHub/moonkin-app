@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "./context/theme_context";
 import "./index.scss";
 import Home from "./views/Home/Home";
-import { Menu } from "./views/Menu/Moonkin";
+import { Menu } from "./views/Menu/Menu";
 import { SearchCreature } from "./views/SearchCreature/SearchCreature";
 import { SearchItem } from "./views/SearchItem/SearchItem";
 

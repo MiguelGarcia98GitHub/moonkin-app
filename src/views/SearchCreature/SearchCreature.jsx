@@ -3,6 +3,7 @@ import { SearchCreatureCard } from "../../components/SearchCreatureCard/SearchCr
 import { ThemeFooter } from "../../components/ThemeFooter/ThemeFooter";
 import { useThemeContext } from "../../context/theme_context";
 import { useDebounce } from "../../hooks/useDebounce";
+import { API_URL_access_token } from "../../utils/constants";
 import css from "./style.module.scss";
 
 export const SearchCreature = () => {
@@ -16,7 +17,7 @@ export const SearchCreature = () => {
 		const fetchData = async () => {
 			try {
 				const response = await fetch(
-					`https://us.api.blizzard.com/data/wow/search/creature?namespace=static-us&name.en_US=${inputTextValue}&orderby=id&_page=1&access_token=USHC6eLcJyZvrVnvN5LH7sYAtifVPBenhx`
+					`https://us.api.blizzard.com/data/wow/search/creature?namespace=static-us&name.en_US=${inputTextValue}&orderby=id&_page=1${API_URL_access_token}`
 				);
 				const data = await response.json();
 
@@ -71,12 +72,7 @@ export const SearchCreature = () => {
 	}, []);
 
 	return (
-		<div
-			className={css.container}
-			onClick={() => {
-				console.log(data);
-			}}
-		>
+		<div className={css.container}>
 			<div
 				className={css.text_input_wrapper}
 				style={{ backgroundColor: backgroundColor, boxShadow: boxShadow }}
@@ -91,8 +87,8 @@ export const SearchCreature = () => {
 				/>
 			</div>
 
-			{loading ? <div>LOADING!!</div> : ""}
-			{!loading && error === "NO_RESULTS" ? <div>NO RESULTS FOUND!</div> : ""}
+			{loading ? <div>LOADING...</div> : ""}
+			{!loading && error === "NO_RESULTS" ? <div>NO RESULTS FOUND</div> : ""}
 			{!loading && error === "WEB_DOWN" ? <div>WEB DOWN!</div> : ""}
 			{!loading && !error ? <SearchCreatureCard creatureData={data} /> : ""}
 			<ThemeFooter icon={"icon-1.png"} backgroundColor={"green"} />

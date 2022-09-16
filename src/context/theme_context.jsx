@@ -5,7 +5,7 @@ const initialState = {
 	currentTheme: "legion",
 	backgroundColor: "backgroundColor: rgba(126, 211, 33, 0.5)",
 	boxShadow: "boxShadow: 0 8px 32px 0 rgba(30, 150, 30, 0.5)",
-	currentIcon: "icon-1.png"
+	icon: "legion-icon.jpg"
 };
 
 const ThemeContext = createContext();
